@@ -1,0 +1,27 @@
+﻿@model ABC_Retail.Models.Customer
+
+<h1>Add New Customer</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Customer_Id">Customer ID</label>
+        <input asp-for="Customer_Id" class="form-control" />
+        <span asp-validation-for=" Customer_Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Customer_Name"></label>
+        <input asp-for="Customer_Name" class="form-control" />
+        <span asp-validation-for="Customer_Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

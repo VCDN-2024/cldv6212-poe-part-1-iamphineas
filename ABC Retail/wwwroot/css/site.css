@@ -1,0 +1,114 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the card layout */
+.card-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+    padding: 20px; /* Padding around the card layout */
+}
+
+    /* Specific styles for the card */
+    .card-layout .card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden; /* Ensures the image and content stay within the card boundaries */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+        transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+        flex: 1 1 calc(33.333% - 20px); /* Three cards per row, minus gap */
+        max-width: calc(33.333% - 20px);
+    }
+
+        .card-layout .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+    /* Image container styles */
+    .card-layout .card-img-container {
+        position: relative;
+        width: 100%;
+        height: 400px; /* Adjust the height as needed */
+        overflow: hidden; /* Hide any overflow of the image */
+    }
+
+        /* Image styling with zoom effect */
+        .card-layout .card-img-container img {
+            width: 100%; /* Full width of the container */
+            height: 100%; /* Full height of the container */
+            object-fit: cover; /* Cover the container area, cropping if necessary */
+            transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+
+            .card-layout .card-img-container img:hover {
+                transform: scale(1.05); /* Slight zoom effect on hover */
+            }
+
+    /* Card body styles */
+    .card-layout .card-body {
+        padding: 15px;
+        transition: background-color 0.3s ease; /* Smooth background color change */
+    }
+
+        .card-layout .card-body:hover {
+            background-color: #f8f9fa; /* Light gray background on hover */
+        }
+
+    /* Title and text styles */
+    .card-layout .card-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 1.25rem; /* Slightly larger font size */
+    }
+
+    .card-layout .card-text {
+        margin-bottom: 10px;
+        color: #6c757d;
+        line-height: 1.6; /* Improves readability */
+    }
+
+    /* Button styles */
+    .card-layout .card-body .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .card-layout .card-body .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    .card-layout .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row on tablets */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 576px) {
+    .card-layout .card {
+        flex: 1 1 100%; /* One card per row on mobile */
+        max-width: 100%;
+    }
+}
+
+/* Logo styling (if used in the card) */
+.card-layout .logo {
+    max-width: 100%; /* Ensure the logo does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60px; /* Adjust as needed to fit within the header */
+}
+
+}

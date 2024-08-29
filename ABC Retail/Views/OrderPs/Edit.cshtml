@@ -1,0 +1,34 @@
+﻿@model ABC_Retail.Models.OrderProcess
+
+<h1>Edit Order</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="PartitionKey" />
+    <input type="hidden" asp-for="RowKey" />
+
+    <div class="form-group">
+        <label asp-for="Customer_Id"></label>
+        <select asp-for="Customer_Id" class="form-control" asp-items="@(new SelectList(ViewData["Customers"] as List<ABC_Retail.Models.Customer>, "Customer_Id", "Customer_Name"))"></select>
+        <span asp-validation-for="Customer_Id" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Product_Id"></label>
+        <select asp-for="Product_Id" class="form-control" asp-items="@(new SelectList(ViewData["Products"] as List<ABC_Retail.Models.Product>, "Product_Id", "Product_Name"))"></select>
+        <span asp-validation-for="Product_Id" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Shipping_Location"></label>
+        <input asp-for="Shipping_Location" class="form-control" />
+        <span asp-validation-for="Shipping_Location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OrderProcess_Date"></label>
+        <input asp-for="OrderProcess_Date" class="form-control" type="date" />
+        <span asp-validation-for="OrderProcess_Date" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
